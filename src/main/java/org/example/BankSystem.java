@@ -27,14 +27,13 @@ public class BankSystem {
             System.out.print("Enter account number: ");
             int accountNumber = userIn.nextInt();
             userIn.nextLine();
-            System.out.print("Enter account number: ");
+            System.out.print("Enter Account Holder's Name: ");
             String holderName = userIn.nextLine().toLowerCase();
             System.out.print("Initial deposit? (yes/no): ");
             String depositChoice = userIn.nextLine();
-
             if(depositChoice.equals("yes")){
                 System.out.print("Enter initial deposit amount: ");
-                int depositAmount = userIn.nextInt();
+                double depositAmount = userIn.nextInt();
                 userIn.nextLine();
                 if (depositAmount>0){
                     BankAccountArray.add(new BankAccount(holderName,depositAmount,accountNumber));
@@ -44,9 +43,8 @@ public class BankSystem {
                 }
 
             } else if (depositChoice.equals("no")) {
-//            Add function call here
+                BankAccountArray.add(new BankAccount(accountNumber,holderName));
                 System.out.println("Account Created Successfully!");
-                System.out.println("Would you like to return to the main menu? (yes/no): ");
             }else {
                 System.out.println("Invalid input");
             }
@@ -97,6 +95,9 @@ public class BankSystem {
                 }
             }
             BankAccountArray.get(matchingAccountNumIndex).deposit(depositAmount);
+            System.out.println("---------Current-------");
+            BankAccountArray.get(matchingAccountNumIndex).displayInfo();
+            System.out.println("-----------------------");
         } else if (userChoice==5) {// Withdraw
             int matchingAccountNumIndex = 0;
             System.out.print("Please enter account number: ");
@@ -111,8 +112,10 @@ public class BankSystem {
                 }
             }
             BankAccountArray.get(matchingAccountNumIndex).withdrawAmount(withdrawAmount);
+            System.out.println("---------Current-------");
+            BankAccountArray.get(matchingAccountNumIndex).displayInfo();
+            System.out.println("-----------------------");
         }
-        // Add "Would you like to return to the main menu? (yes/no): 
     }
 }
 }

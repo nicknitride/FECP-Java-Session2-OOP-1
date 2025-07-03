@@ -19,7 +19,7 @@ public class BankAccount {
         if (depositAmount > 0){
             this.bankBalance = bankBalance+depositAmount;
         }else{
-            System.out.println("Invalid amount");
+            System.out.println("Invalid amount, balance unchanged");
         }
     }
     public void withdrawAmount(double withdrawAmount){
