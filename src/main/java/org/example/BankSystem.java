@@ -42,12 +42,12 @@ public class BankSystem {
                 }
                 System.out.println("Would you like to return to the main menu? (yes/no): ");
             } else if (depositChoice.equals("no")) {
+//            Add function call here
                 System.out.println("Account Created Successfully!");
                 System.out.println("Would you like to return to the main menu? (yes/no): ");
+            }else {
+                System.out.println("Invalid input");
             }
-//            Add function call here
-
-
         }
 
         // Add "Would you like to return to the main menu? (yes/no): 
