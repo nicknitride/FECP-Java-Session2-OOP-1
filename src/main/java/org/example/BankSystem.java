@@ -17,12 +17,40 @@ public class BankSystem {
     Scanner userIn = new Scanner(System.in);
     while (!exitCondition){
         displayMenu();
-        System.out.print("Enter Choice: ");
+        System.out.print("Enter Choice (1-5): ");
         int userChoice = userIn.nextInt();
         userIn.nextLine();
         if(userChoice==6){
             exitCondition = true;
+        } else if (userChoice==1) {
+            System.out.print("Enter account number: ");
+            int accountNumber = userIn.nextInt();
+            userIn.nextLine();
+            System.out.print("Enter account number: ");
+            String holderName = userIn.nextLine().toLowerCase();
+            System.out.print("Initial deposit? (yes/no): ");
+            String depositChoice = userIn.nextLine();
+            if(depositChoice.equals("yes")){
+                System.out.print("Enter initial deposit amount: ");
+                int depositAmount = userIn.nextInt();
+                userIn.nextLine();
+                if (depositAmount>0){
+//                    add function call to deposit
+                    System.out.println("Account Created Successfully");
+                }else{
+                    System.out.println("Invalid ");
+                }
+                System.out.println("Would you like to return to the main menu? (yes/no): ");
+            } else if (depositChoice.equals("no")) {
+                System.out.println("Account Created Successfully!");
+                System.out.println("Would you like to return to the main menu? (yes/no): ");
+            }
+//            Add function call here
+
+
         }
+
+        // Add "Would you like to return to the main menu? (yes/no): 
     }
 }
 }
