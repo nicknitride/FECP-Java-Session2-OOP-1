@@ -4,7 +4,7 @@ public class BankAccount {
     private String accountHolder;
     private double depositAmount, withdrawAmount, bankBalance;
     private int accountNumber;
-    BankAccount(String accountHolder, double depositAmount, int accountNumber){//For no deposit
+    BankAccount(String accountHolder, double depositAmount, int accountNumber){//For with deposit
         this.accountHolder = accountHolder;
         this.bankBalance = bankBalance+depositAmount;
         this.accountNumber = accountNumber;
